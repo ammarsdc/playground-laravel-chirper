@@ -2,17 +2,17 @@ import React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
-import {useForm, Head} from '@inertiajs/react';
+import { useForm, Head } from '@inertiajs/react';
 import Chirp from "@/Components/Chirp";
 
-export default function Index({auth, chirps}) {
-    const {data, setData, post, processing, reset, errors} = useForm({
+export default function Index({ auth, chirps }) {
+    const { data, setData, post, processing, reset, errors } = useForm({
         message: '',
     });
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('chirps.store'), {onSuccess: () => reset()});
+        post(route('chirps.store'), { onSuccess: () => reset() });
     };
 
     return (
